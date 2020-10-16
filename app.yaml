@@ -1,0 +1,19 @@
+# Use the PHP 7.3 runtime 
+runtime: php73
+#runtime configurations
+runtime_config:
+  document_root: .
+
+handlers:
+- url: /stylesheets
+  static_dir: css
+- url: /js
+  static_dir: js  
+- url: /images
+  static_dir: images  
+- url: /.*
+  script: auto 
+  
+entrypoint :
+  serve handler.php   
+
